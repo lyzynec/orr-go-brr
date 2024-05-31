@@ -251,6 +251,15 @@
         mu_i &>= 0 "for" i = 1, 2, ..., m
         $
 
+        The first line states (in domain of real numbers) that
+        $
+        op("sign")(f'(x) = -op("sign")(g'(x)))
+        $
+        meaining, that either we are inside the domain and $f$ is minimal or
+        we are at the boundary.
+
+        The third line states that for $g(x) < 0$ the $mu = 0$
+
     ]
 
 ]
