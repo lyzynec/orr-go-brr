@@ -2,7 +2,7 @@
 
 #show: project.with(
   title: "ORR go BRR",
-  author: "",
+  author: "lyzynec",
 )
 
 #week[#include "01/main.typ"]
