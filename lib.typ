@@ -12,6 +12,10 @@
     #block(it.body)
   ]
 
+  show heading.where(level: 4): it =>[
+    #block(it.body + ":")
+  ]
+
   set document(author: author, title: title)
   set text(font: "Linux Libertine", lang: "en")
 
@@ -44,19 +48,9 @@
   body
 }
 
-#let fmat = (mat, entryHeight) => {
-  // return if matrix is empty
-  if mat.rows.len() == 0 or mat.rows.at(0).len() == 0 {return mat} 
-  let firstEntry = mat.rows.at(0).at(0)
-  // return if entries are already wrapped in blocks (using the first entry) to avoid infinite recursion
-  if firstEntry.func() == block {return mat} 
-  // wrap every entry in block with fixed height
-  let entries = mat.rows.map(row => {
-    row.map(entry => {
-      block(entry, height: entryHeight)
-    })
-  })
-  set align(horizon)
-  let delim = if mat.has("delim") {mat.delim} else {"["}
-  math.mat(..entries, delim: delim)
+#let part(name: [], body) = {
+  box(width: 100%, stroke: 2pt, inset: 7.5pt)[
+    #heading(level: 4)[#name]
+    #body
+  ]
 }

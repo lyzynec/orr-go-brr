@@ -40,8 +40,7 @@
         & bold(h)(bold(x), bold(u)) <= bold(0)
         $
 
-        #box(width: 100%)[
-            *Simultaneous (sparse) optimization:*
+        #part(name: [Simultaneous (sparse) optimization])[
             We optmize over both $bold(x)$ and $bold(u)$ vectors with the cost
             function being
             $
@@ -76,8 +75,8 @@
             $
         ]
 
-        #box(width: 100%)[
-            *Sequential (dense) optimization:*
+        
+        #part(name: [Sequential (dense) optimization])[
             This works by expressing $bold(x)$ as a function of $bold(u)$ and
             $bold(x)_0$
             $
@@ -99,8 +98,8 @@
     optimization problem and consider also including the inequality constraints.
     What is the major disadvantage of the control strategy based on the offline
     optimization over a control sequence?])[
-        #box(width: 100%)[
-            *Simultaneous (sparse) optimization:*\
+
+        #part(name: [Simultaneous (sparse) optimization])[
             The problem is in the form
             $
             op("min", limits: #true)_(hat(bold(x)) in RR^(2N))
@@ -134,8 +133,8 @@
             function, but the overall design would be the same.
         ]
 
-        #box(width: 100%)[
-            *Sequential (dense) optimization:*\
+        #part(name: [Sequential (dense) optimization])[
+
             We remove the constraints
             $
             bold(x) = (bold(I) - overline(bold(A)))^(-1) overline(bold(B))
@@ -200,7 +199,20 @@
             ```matlab
             u = - H \ F * x0;
             ```
+
+            This can be further extended by adding
+            $
+            bold(u)_k <= bold(u)_"max"\
+            bold(u)_k >= bold(u)_"min"
+            $
+            
+            For constarints on state, we have to express it using
+            $
+            hat(bold(C)) bold(u) + hat(bold(A)) bold(x)_0 <= bold(x)_"max"
+            $
         ]
+
+        The major disadvantage of both these options
 
         
     ]

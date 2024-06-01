@@ -27,15 +27,13 @@
         - exact search
         - approximate search
 
-        #box(width: 100%)[
-            *Fixed step:*
+        #part(name: [Fixed step])[
             Descent is poerfomed in fixed steps, meaining it must be estimated
             beforehand what step size will be taken. This may result in poor
             performance.
         ]
 
-        #box(width: 100%)[
-            *Exact search:*
+        #part(name: [Exact search])[
             In each step the step size is calculated to minimize the value.
             This can be done using for example:
             - bisection

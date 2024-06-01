@@ -59,8 +59,7 @@
     _stationary_) _point_. Extend these to the vector argument case. Formulate
     them both using a _Fréchet_ and _Gateaux_ derivatives. Specialize the result
     to quadratic functions.])[
-        #box(width: 100%)[
-            *For scalar functions:*
+        #part(name: [For scalar functions])[
             $
             upright(d)/(upright(d) x) f(x) = 0
             $
@@ -69,8 +68,7 @@
             _Critical point_ is a point satisfing the necessary condition.
         ]
 
-        #box(width: 100%)[
-            *For vector functions:*
+        #part(name: [For vector functions])[
             _Gateaux_ derivative states that the derivative is zero at critical
             point $x^*$ if $f(x^* + alpha bold(d))$ has a minimum at at $x^*$
             for all directions bold(d).
@@ -81,8 +79,7 @@
             $norm(bold(d))$ (norm of perturbation).
         ]
 
-        #box(width: 100%)[
-            *For quadratic functions:*
+        #part(name: [For quadratic functions])[
             $
             f(bold(x)) = 1/2 bold(x)^T Q bold(x) + bold(b)^T bold(x) + c
             $
@@ -108,8 +105,7 @@
     points into minimum, maximum, saddle point, and singularity point.
     Specialize the results to quadratic functions.])[
 
-        #box(width: 100%)[
-            *For scalar functions:*
+        #part(name: [For scalar functions])[
             $
             upright(d)^2 / (upright(d) x^2) f(x) > 0
             $
@@ -119,8 +115,7 @@
             negative, zero second derivative implies inflextion point.
         ]
 
-        #box(width: 100%)[
-            *For vector functions:*
+        #part(name: [For vector functions])[
             $
             gradient^2 f(x) = H > 0
             $
@@ -133,8 +128,7 @@
 
         ]
 
-        #box(width: 100%)[
-            *For quadratic functions:*
+        #part(name: [For quadratic functions])[
             $
             f(bold(x)) = 1/2 bold(x)^T Q bold(x) + bold(b)^T bold(x) + c
             $
@@ -183,8 +177,7 @@
         $
 
 
-        #box(width: 100%)[
-            *For quadratic cost functions and linear constraints:*
+        #part(name: [For quadratic cost functions and linear constraints])[
             $
             op("min", limits: #true)_(bold(x) in RR^n)
             1/2 bold(x)^T bold(Q) bold(x) + bold(b)^T bold(x)
