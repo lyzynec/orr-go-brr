@@ -212,38 +212,105 @@
             $
         ]
 
-        The major disadvantage of both these options
-
-        
+        The major disadvantage of both these options is that the optimization
+        has to be precalculated in advance, meaining that any divergence form
+        the expected path introduces problems as it is by design open--loop.
     ]
 
     #question(name: [Explain the essence of receding horizon control also known
     as model predictive control (MPC). What are the major advantages and
-    disadvantages?])[]
+    disadvantages?])[
+        MPC (Model Predictive Control) takes the aformentioned optimization
+        and uses it to control the system in real time.
+
+        It calculates $N$ steps before the current state, and performs the
+        first one. Than it repeats the entire procedure again, only shifted
+        by one sample.
+
+        This allows the controler to react to current state without compromising
+        the ability of long--term planning.
+
+        Main disadvantage is potential issues with real--time calculations, as
+        it is computationaly expensive to preform the optimization in every
+        step.
+    ]
 
 
     #question(name: [Formulate the MPC regulation for a linear system and a
     quadratic cost as a quadratic program. Give both the simultaneous and
-    sequential versions.])[]
+    sequential versions.])[
+        The optimization is identical to open--loop formulation
+        $
+        op("min", limits: #true)_(bold(u), bold(x))
+        1/2 bold(x)_N^T bold(S) bold(x)_N &+ 1/2 sum_(k=1)^(N-1)
+        (bold(x)_k^T bold(Q) bold(x)_k + bold(u)_k^T bold(R) bold(u)_k)\
+        "subject to" &bold(x)_(k+1) = bold(A) bold(x)_k + bold(B) bold(u)_k\
+        &bold(x)_t = "given"\
+        &bold(x)_"min" <= bold(x)_k <= bold(x)_"max"\
+        &bold(u)_"min" <= bold(u)_k <= bold(u)_"max"
+        $
+
+        #part(name: [Simultaneous (sparse) optimization])[
+            This is already described in the previous question.
+        ]
+
+        #part(name: [Sequential (dense) optimization])[
+            The sequential version without constrainst is equivalent to
+            _state feedback control_.
+
+            The rest is decribed in previous question.
+        ]
+        
+    ]
 
 
     #question(name: [Formulate the MPC tracking for a linear system and a
     quadratic cost as a quadratic program. Explain the need for replacement of
     the control signals by their increments in the optimization problem. Give
-    both the simultaneous and sequential versions.])[]
+    both the simultaneous and sequential versions.])[
+        We have to rewirte the problem in another form
+        $
+        bold(e)_k = bold(r)_k - bold(y)_k
+            = bold(r)_k - bold(C)bold(x)_k arrow.r bold(0)
+        $
+
+        To have a steady state, we have to optimize over $Delta bold(u)$ instead
+        of $bold(u)$ as the input signal might be nonzero for the steady state.
+
+        Now we have to rewrite the entire problem using this notation, and than
+        we can form the two types of optimization.
+    ]
 
 
     #question(name: [Discuss the anticipatory reference tracking (aka preview
-    control) and show how this could be achieved using MPC.])[]
+    control) and show how this could be achieved using MPC.])[
+        This is simmilar to regular tracking MPC, but as the reference can be
+        set arbitralrily, we can set the future reference to other values.
+    ]
 
 
     #question(name: [Show how soft constraints can be included in the MPC
-    optimization problem and discuss the motivation for their introduction.])[]
+    optimization problem and discuss the motivation for their introduction.])[
+        We can add new optimization variable $epsilon$ in order to soften the
+        constraints as
+        $
+        bold(y)_"min" - epsilon bold(v)_"max" <= bold(y)_k
+            <= bold(y)_"max" + epsilon bold(v)_"max"
+        $
+        we also have add the $epsilon$ variable to the cost function
+        $
+        "min" [... + rho epsilon]
+        $
+        where $rho$ is a positive constant.
+    ]
 
 
     #question(name: [Explain the difference between the prediction horizon and
-    control horizon.])[]
-
+    control horizon.])[
+        Prediction horizon are the steps that are simulated in the MPC,
+        control horizon are the steps for which the control sequence
+        ($Delta bold(u)$) is non--zero.
+    ]
 
 ]
 
