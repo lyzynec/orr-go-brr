@@ -49,7 +49,7 @@
 }
 
 #let part(name: [], body) = {
-  box(width: 100%, stroke: 2pt, inset: 7.5pt)[
+  box(width: 100%, stroke: 1pt, inset: 7.5pt)[
     #heading(level: 4)[#name]
     #body
   ]
