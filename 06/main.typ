@@ -133,7 +133,7 @@
         )]
 
         - For fixed final time, our solution is obrained through the reachability
-        Gramian.
+            Gramian.
         - For free final time, we will have to solve Riccati differential
             equation.
     ]
