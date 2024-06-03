@@ -34,7 +34,7 @@
     (finite) control sequences. Discuss the two possible variants: simultaneous
     and sequential.])[
         $
-        op("min", limits: #true)_(bold(x) in RR^(n(N-i)),
+        min_(bold(x) in RR^(n(N-i)),
         bold(u) in RR^(m(N-i))) &J(bold(x) bold(u))\
         "subject to" & bold(g)(bold(x), bold(u)) = bold(0)\
         & bold(h)(bold(x), bold(u)) <= bold(0)
@@ -44,7 +44,7 @@
             We optmize over both $bold(x)$ and $bold(u)$ vectors with the cost
             function being
             $
-            op("min", limits: #true)_(hat(bold(x)) in RR^(2N)) 1/2
+            min_(hat(bold(x)) in RR^(2N)) 1/2
             underbrace(mat(bold(x)^T, bold(u)^T), hat(bold(x))^T) 
             underbrace(mat(overline(bold(Q)), ""; "", overline(bold(R))),
                 hat(bold(Q)))
@@ -69,7 +69,7 @@
 
             Now the problem looks like
             $
-            op("min", limits: #true)_(hat(bold(x)) in RR^(2N)) &1/2
+            min_(hat(bold(x)) in RR^(2N)) &1/2
             hat(bold(x))^T hat(bold(Q)) hat(bold(x))\
             "subject to" &bold(h)(bold(hat(bold(x)))) = bold(0)
             $
@@ -102,7 +102,7 @@
         #part(name: [Simultaneous (sparse) optimization])[
             The problem is in the form
             $
-            op("min", limits: #true)_(hat(bold(x)) in RR^(2N))
+            min_(hat(bold(x)) in RR^(2N))
             &1/2 hat(bold(x))^T hat(bold(Q)) hat(bold(x))\
             "subject to" & hat(bold(A)) hat(bold(x)) + hat(bold(b)) = bold(0)
             $
@@ -241,7 +241,7 @@
     sequential versions.])[
         The optimization is identical to open--loop formulation
         $
-        op("min", limits: #true)_(bold(u), bold(x))
+        min_(bold(u), bold(x))
         1/2 bold(x)_N^T bold(S) bold(x)_N &+ 1/2 sum_(k=1)^(N-1)
         (bold(x)_k^T bold(Q) bold(x)_k + bold(u)_k^T bold(R) bold(u)_k)\
         "subject to" &bold(x)_(k+1) = bold(A) bold(x)_k + bold(B) bold(u)_k\

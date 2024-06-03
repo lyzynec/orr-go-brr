@@ -139,7 +139,7 @@
 
         As such to find
         $
-        op("min", limits: #true)_(bold(x) in RR^n) f(bold(x))
+        min_(bold(x) in RR^n) f(bold(x))
         $
         we perform
         $

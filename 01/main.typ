@@ -154,7 +154,7 @@
     constraints.])[
         For optimization
         $
-        op("min", limits: #true)_(bold(x) in RR^n) f(bold(x))\
+        min_(bold(x) in RR^n) f(bold(x))\
         "subject to" bold(h)(bold(x)) = bold(0)
         $
 
@@ -179,7 +179,7 @@
 
         #part(name: [For quadratic cost functions and linear constraints])[
             $
-            op("min", limits: #true)_(bold(x) in RR^n)
+            min_(bold(x) in RR^n)
             1/2 bold(x)^T bold(Q) bold(x) + bold(b)^T bold(x)
             "subject to" bold(A) bold(x) + bold(b) = bold(0)
             $
@@ -233,7 +233,7 @@
     for inequality-constrained optimization problems.])[
         For optimization
         $
-        op("min", limits: #true)_(bold(x) in RR^n) f(bold(x))\
+        min_(bold(x) in RR^n) f(bold(x))\
         "subject to" bold(g)(bold(x)) <= bold(0)
         $
         the KKT conditions are

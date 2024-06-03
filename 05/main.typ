@@ -37,7 +37,7 @@
             Now the optimum for cost function $J_i$ is
             $
             J_i^* (bold(x)_i)
-            = op("min", limits: #true)_(bold(u)_j "for" j in [i, N-1])
+            = min_(bold(u)_j "for" j in [i, N-1])
             J_i (bold(x)_i, [bold(u)_i, bold(u)_(i+1), ..., bold(u)_(N-1)])
             $
 
@@ -47,7 +47,7 @@
             Now, if we apply any (not neccesatily optimal) control $bold(u)_k$
             the cost would, according to Bellman, be
             $
-            J_k^* (bold(x)_k) = op("min", limits: #true)_bold(u)_k
+            J_k^* (bold(x)_k) = min_bold(u)_k
             (L_k (bold(x)_k, bold(u)_k) + J_(k+1)^* (bold(x)_(k+1)))
             $
 
@@ -74,7 +74,7 @@
         The HJB equation is
         $
         - (diff J^* (bold(x), t))/(diff t)
-        = op("min", limits: #true)_(bold(u)(t))
+        = min_(bold(u)(t))
         [L(bold(x), bold(u), t)
         + (gradient_bold(x) J^* (bold(x), t))^T bold(f)(bold(x), bold(u), t)]
         $
@@ -87,7 +87,7 @@
         the HJB equation can be reformulated as
         $
         - (diff J^* (bold(x), t))/(diff t)
-        = op("min", limits: #true)_(bold(u)(t))
+        = min_(bold(u)(t))
         H(bold(x), bold(u), gradient_bold(x) J^* (bold(x), t), t)
         $
         meaning we have to minimize Hamiltonian to achieve optimal control.

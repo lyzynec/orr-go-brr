@@ -10,7 +10,7 @@
 
         The problem statement thus is
         $
-        op("min", limits: #true)_(bold(x), bold(u)) [ phi.alt(bold(x)(t_f))
+        min_(bold(x), bold(u)) [ phi.alt(bold(x)(t_f))
         &+ integral_(t_i)^(t_f) L(bold(x)(t), bold(u)(t), t) upright(d) t ]\
         $
         suject to
@@ -68,7 +68,7 @@
 
         The problem statement thus is
         $
-        op("min", limits: #true)_(bold(x), bold(u)) [ phi.alt(bold(x)(t_f))
+        min_(bold(x), bold(u)) [ phi.alt(bold(x)(t_f))
         &+ integral_(t_i)^(t_f) L(bold(x)(t), bold(u)(t), t) upright(d) t ]\
         $
         suject to

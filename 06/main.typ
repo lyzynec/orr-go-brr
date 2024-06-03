@@ -8,7 +8,7 @@
             $
             y(a) = y_a, y(b) = y_b\
             J(y) = integral_a^b L(x, y(x), y'(x)) upright(d) x\
-            op("min", limits: #true)_(y(x) in cal(C)^1 [a, b])
+            min_(y(x) in cal(C)^1 [a, b])
             J(y(x))
             $
             - $y in cal(C)^1$ means that the function $cal(C)^1$ continous, meainig
@@ -39,7 +39,7 @@
     #question(name: [Write down the Euler--Lagrange equation and explain that it
     constitutes the first--order necessary condition of optimality for the
     calculus of variations problem
-    $op("min", limits: #true)_y(x) integral_a^b L(x, y(x), y'(x))$.])[
+    $min_y(x) integral_a^b L(x, y(x), y'(x))$.])[
         $
         (diff L(x, y(x), y'(x))) / (diff y(x))
         - upright(d)/(upright(d) x) (diff L(x, y(x), y'(x))) / (diff y'(x)) = 0
@@ -68,7 +68,7 @@
     that reflect the type of the problem.])[
         The optimal control problem
         $
-        op("min", limits: #true)_(bold(x)(t), bold(u)(t)) &[integral_(t_i)^(t_f)
+        min_(bold(x)(t), bold(u)(t)) &[integral_(t_i)^(t_f)
         L(bold(x), bold(u), t) upright(d) t]\
         "subject to" dot(bold(x))(t) &= bold(f)(bold(x), bold(u), t)\
         bold(x)(t_i) &= bold(r)_i
