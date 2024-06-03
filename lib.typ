@@ -2,6 +2,12 @@
     title: "",
     author: "",
     body) = {
+
+    set document(author: author, title: title)
+    set text(font: "Linux Libertine", lang: "en")
+    set page(numbering: "1")
+
+
     set heading(numbering: "1.A.1")
     show heading.where(level: 1): it =>[
         #block(it.body)
@@ -15,14 +21,10 @@
         #block(it.body + ":")
     ]
 
-    set document(author: author, title: title)
-    set text(font: "Linux Libertine", lang: "en")
-
-    align(center)[#block(text(weight: 700, 1.75em, title))]
-
-
     set math.mat(delim: "[")
     set math.vec(delim: "[")
+
+    align(center)[#block(text(weight: 700, 1.75em, title))]
 
     body
 }
