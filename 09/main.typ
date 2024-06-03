@@ -1,7 +1,5 @@
 #import "../lib.typ": *
 
-#import "@preview/cetz:0.2.2"
-
 #knowledge[
     #question(name: [Explain the necessary changes to the LQR framework in the
     case when the system is exposed to some random disturbances and the initial
@@ -43,14 +41,14 @@
     (LTR) control strategy as a heuristic means of restoring the robustness of
     an LQG controller.])[
         In order to force Kalman not to trust so heavily the input information,
-        introduce noise to that signal.
+        introduce noise to input signal.
     ]
 
 
     #question(name: [Reformulate both the LQR and the LQG problems with the new
     setup featuring a _generalized system_ and a feedback controller in the
     feedback loop.])[
-
+        #align(center)[#image("includes/h2-generalized.png", width: 60%)]
     ]
 
 
@@ -69,11 +67,14 @@
             [bold(g)^T (t) bold(g) (t)] upright(d) t
         )
         $
-
+        where $bold(g) (t)$ is impulse response.
+        
         $H^2$ norm indicates the amplification of white noise
         $
         E{bold(y)^T (oo) bold(y) (oo)} = norm(bold(G))_2^2 S_w
         $
+
+        #align(center)[#image("includes/h2-lq-generalized.png", width: 60%)]
     ]
 
 
