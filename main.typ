@@ -26,3 +26,5 @@
 #week[#include "10/main.typ"]
 #pagebreak()
 #week[#include "11/main.typ"]
+#pagebreak()
+#week[#include "12/main.typ"]
