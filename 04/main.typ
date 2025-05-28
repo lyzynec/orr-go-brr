@@ -64,7 +64,7 @@
         With cost function
         $
         J = 1/2 bold(x)_N^T bold(S)_N bold(x)_N + 1/2 sum_(k=0)^(N-1)
-        [bold(x)_k^T bold(Q) bold(x)_k + bold(u)_k^T R u_k] 
+        [bold(x)_k^T bold(Q) bold(x)_k + bold(u)_k^T bold(R) bold(u)_k] 
         $
         the Hamiltonian $H$ function would be
         $

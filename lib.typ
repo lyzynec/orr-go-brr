@@ -4,7 +4,7 @@
     body) = {
 
     set document(author: author, title: title)
-    set text(font: "Linux Libertine", lang: "en")
+    set text(lang: "en")
     set page(numbering: "1")
 
 

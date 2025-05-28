@@ -1,6 +1,6 @@
 #import "../lib.typ": *
 
-#import "@preview/algo:0.3.3": algo, i, d
+#import "@preview/algo:0.3.6": algo, i, d
 
 #knowledge[
     #question(name: [Explain the main principle of descent direction methods for
